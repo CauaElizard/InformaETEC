@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETEC - Cursos Integrados</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo ETEC">
+            <h1>ETEC Cursos Integrados</h1>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#cursos"><i class="fas fa-book"></i> Cursos</a></li>
+                <li><a href="#professores"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
+                <li><a href="#infraestrutura"><i class="fas fa-building"></i> Infraestrutura</a></li>
+                <li><a href="#teste-vocacional"><i class="fas fa-question-circle"></i> Teste Vocacional</a></li>
+                <li><a href="#noticias"><i class="fas fa-newspaper"></i> Notícias</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2>Bem-vindo à ETEC</h2>
+                <p>Conheça nossos cursos técnicos integrados ao ensino médio e descubra seu futuro profissional</p>
+                <a href="#cursos" class="btn">Explore nossos cursos</a>
+            </div>
+        </section>
+
+        <section id="cursos" class="section">
+            <h2>Cursos Oferecidos</h2>
+            <div class="cursos-container" id="cursos-container">
+                <!-- Os cursos serão carregados via JavaScript -->
+            </div>
+        </section>
+
+        <section id="professores" class="section">
+            <h2>Nossos Professores</h2>
+            <div class="professores-container" id="professores-container">
+                <!-- Os professores serão carregados via JavaScript -->
+            </div>
+        </section>
+
+        <section id="infraestrutura" class="section">
+            <h2>Infraestrutura</h2>
+            <div class="infra-carousel">
+                <div class="carousel-container" id="infra-carousel">
+                    <!-- As imagens serão carregadas via JavaScript -->
+                </div>
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+            <div class="infra-desc">
+                <p>Nossa instituição conta com laboratórios modernos, biblioteca atualizada e salas de aula equipadas para proporcionar a melhor experiência de aprendizado.</p>
+            </div>
+        </section>
+
+        <section id="teste-vocacional" class="section">
+            <h2>Teste Vocacional</h2>
+            <div class="form-container">
+                <form id="testeForm">
+                    <div class="form-step active" id="step1">
+                        <h3>Quais áreas mais te interessam?</h3>
+                        <div class="options">
+                            <label><input type="checkbox" name="interesses" value="tecnologia"> Tecnologia</label>
+                            <label><input type="checkbox" name="interesses" value="saude"> Saúde</label>
+                            <label><input type="checkbox" name="interesses" value="administracao"> Administração</label>
+                            <label><input type="checkbox" name="interesses" value="design"> Design</label>
+                            <label><input type="checkbox" name="interesses" value="meio-ambiente"> Meio Ambiente</label>
+                        </div>
+                        <button type="button" class="btn next-btn" onclick="nextStep(1)">Próximo</button>
+                    </div>
+                    
+                    <div class="form-step" id="step2">
+                        <h3>Quais são suas habilidades?</h3>
+                        <div class="options">
+                            <label><input type="checkbox" name="habilidades" value="logica"> Raciocínio Lógico</label>
+                            <label><input type="checkbox" name="habilidades" value="criatividade"> Criatividade</label>
+                            <label><input type="checkbox" name="habilidades" value="comunicacao"> Comunicação</label>
+                            <label><input type="checkbox" name="habilidades" value="organizacao"> Organização</label>
+                            <label><input type="checkbox" name="habilidades" value="trabalho-equipe"> Trabalho em Equipe</label>
+                        </div>
+                        <button type="button" class="btn prev-btn" onclick="prevStep(2)">Voltar</button>
+                        <button type="button" class="btn next-btn" onclick="nextStep(2)">Próximo</button>
+                    </div>
+                    
+                    <div class="form-step" id="step3">
+                        <h3>Como você se vê no futuro?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="futuro" value="empreendedor"> Empreendendo meu próprio negócio</label>
+                            <label><input type="radio" name="futuro" value="empresa"> Trabalhando em uma grande empresa</label>
+                            <label><input type="radio" name="futuro" value="servico-publico"> Servindo ao setor público</label>
+                            <label><input type="radio" name="futuro" value="pesquisa"> Atuando em pesquisa e desenvolvimento</label>
+                            <label><input type="radio" name="futuro" value="freelancer"> Trabalhando como freelancer/autônomo</label>
+                        </div>
+                        <button type="button" class="btn prev-btn" onclick="prevStep(3)">Voltar</button>
+                        <button type="submit" class="btn">Ver Resultado</button>
+                    </div>
+                </form>
+            </div>
+            <div id="resultado-teste" class="hidden">
+                <h3>Curso Recomendado:</h3>
+                <div id="curso-recomendado"></div>
+                <button class="btn" onclick="resetTeste()">Refazer Teste</button>
+            </div>
+        </section>
+
+        <section id="noticias" class="section">
+            <h2>Notícias e Eventos</h2>
+            <div class="noticias-container" id="noticias-container">
+                <!-- As notícias serão carregadas via JavaScript -->
+            </div>
+        </section>
+
+        <section id="contato" class="section">
+            <h2>Contato</h2>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <h3>Informações de Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua da ETEC, 123 - Centro - Cidade/SP</p>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@etec.com.br</p>
+                    <p><i class="fas fa-clock"></i> Segunda a Sexta: 8h às 18h</p>
+                    
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contato-form">
+                    <h3>Envie sua mensagem</h3>
+                    <form id="contatoForm">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto:</label>
+                            <select id="assunto" name="assunto">
+                                <option value="duvida">Dúvida sobre cursos</option>
+                                <option value="matricula">Matrícula</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A ETEC oferece cursos técnicos integrados ao ensino médio, preparando os alunos para o mercado de trabalho e para o ensino superior.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#professores">Professores</a></li>
+                    <li><a href="#infraestrutura">Infraestrutura</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> contato@etec.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 ETEC Cursos Integrados. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
