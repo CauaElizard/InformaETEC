@@ -12,16 +12,29 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+
 }
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
 
 body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--gray-light);
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;       
+    scrollbar-width: none;     
+    overflow: -moz-scrollbars-none;
 }
 
 header {
@@ -31,7 +44,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -72,7 +85,8 @@ nav ul li a i {
     margin-right: 8px;
 }
 
-nav ul li a:hover, nav ul li a.active {
+nav ul li a:hover,
+nav ul li a.active {
     background-color: var(--light-color);
     color: var(--dark-color);
 }
@@ -102,8 +116,13 @@ main {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .hero {
@@ -142,7 +161,7 @@ main {
     background-color: var(--secondary-color);
     color: var(--light-text);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -152,7 +171,6 @@ h2 {
     border-bottom: 2px solid var(--light-color);
 }
 
-/* Estilos para a seção de cursos */
 .cursos-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -163,7 +181,7 @@ h2 {
     background-color: var(--light-text);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -222,7 +240,7 @@ h2 {
     background-color: var(--light-text);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -278,7 +296,7 @@ h2 {
     display: flex;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-slide {
@@ -296,7 +314,7 @@ h2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: var(--light-text);
     border: none;
     padding: 1rem;
@@ -308,7 +326,7 @@ h2 {
 }
 
 .carousel-btn:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev {
@@ -323,7 +341,7 @@ h2 {
     background-color: var(--light-text);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para o teste vocacional */
@@ -331,7 +349,7 @@ h2 {
     background-color: var(--light-text);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-step {
@@ -372,7 +390,8 @@ h2 {
     margin-right: 10px;
 }
 
-.next-btn, .prev-btn {
+.next-btn,
+.prev-btn {
     margin-right: 1rem;
 }
 
@@ -380,7 +399,7 @@ h2 {
     background-color: var(--light-text);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-top: 2rem;
 }
@@ -409,7 +428,7 @@ h2 {
     background-color: var(--light-text);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .noticia-img {
@@ -465,7 +484,7 @@ h2 {
     background-color: var(--light-text);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contato-info h3 {
@@ -505,7 +524,7 @@ h2 {
     background-color: var(--light-text);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contato-form h3 {
@@ -560,7 +579,8 @@ footer {
     font-size: 1.2rem;
 }
 
-.footer-section p, .footer-section li {
+.footer-section p,
+.footer-section li {
     margin-bottom: 0.8rem;
     font-size: 0.9rem;
 }
@@ -583,7 +603,7 @@ footer {
     text-align: center;
     padding: 1.5rem 0;
     margin-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
 }
 
@@ -594,31 +614,31 @@ footer {
         flex-direction: column;
         width: 100%;
     }
-    
+
     nav ul.show {
         display: flex;
     }
-    
+
     nav ul li {
         width: 100%;
         text-align: center;
     }
-    
+
     nav ul li a {
         display: block;
         padding: 1rem;
         margin: 0;
         border-radius: 0;
     }
-    
+
     .mobile-menu {
         display: block;
     }
-    
+
     .contato-container {
         grid-template-columns: 1fr;
     }
-    
+
     .hero h2 {
         font-size: 2rem;
     }
@@ -629,20 +649,20 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .logo img {
         margin-right: 0;
         margin-bottom: 10px;
     }
-    
+
     .hero {
         padding: 2rem 1rem;
     }
-    
+
     .hero h2 {
         font-size: 1.8rem;
     }
-    
+
     .hero p {
         font-size: 1rem;
     }
