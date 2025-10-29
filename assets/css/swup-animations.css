@@ -1,0 +1,54 @@
+/* Animações do Swup - Conteúdo abaixo do Hero */
+.transition-wrap {
+    position: relative;
+}
+
+.swup-transition-fade {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.swup-transition-fade.is-changing {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.swup-transition-fade.is-rendering {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading entre transições */
+.swup-loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    z-index: 9999;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.swup-loading-indicator.is-loading {
+    transform: scaleX(0.3);
+}
+
+.swup-loading-indicator.is-finishing {
+    transform: scaleX(1);
+    transition: transform 0.4s ease;
+}
+
+/* Ajuste para o Hero fixo */
+.hero-section {
+    position: relative;
+    z-index: 1;
+}
+
+#swup {
+    position: relative;
+    z-index: 2;
+}

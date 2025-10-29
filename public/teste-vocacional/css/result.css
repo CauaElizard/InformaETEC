@@ -1,0 +1,244 @@
+:root {
+  --primary: #1a2a6c;
+  --secondary: #b21f1f;
+  --accent: #fdbb2d;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* ========== DASHBOARD ========== */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ========== PROGRESS SECTION ========== */
+.progress-section {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.progress-container {
+  margin-bottom: 30px;
+}
+
+.progress-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.progress-labels {
+  margin-top: 20px;
+}
+
+.status-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px;
+  background: rgba(26, 42, 108, 0.05);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ========== RECOMMENDATIONS ========== */
+.recomendacoes-container {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recomendacoes-header {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.recomendacoes-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ========== COURSE INFO ========== */
+.curso-info {
+  line-height: 1.8;
+}
+
+.curso-info h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.curso-info h4 {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.curso-info p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.curso-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.curso-info ul li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #666;
+}
+
+.curso-info ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* ========== ACTIONS ========== */
+.acoes {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.acoes a {
+  flex: 1;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-refazer {
+  background: #e0e0e0;
+  color: var(--dark);
+}
+
+.btn-refazer:hover {
+  background: #d0d0d0;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-novo {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 4px 15px rgba(26, 42, 108, 0.3);
+}
+
+.btn-novo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(26, 42, 108, 0.4);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-section {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .recomendacoes-container {
+    padding: 25px;
+  }
+
+  .recomendacoes-header {
+    font-size: 1.5rem;
+  }
+
+  .curso-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
+
+  .acoes a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .progress-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .curso-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .curso-info h4 {
+    font-size: 1.1rem;
+  }
+}
