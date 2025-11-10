@@ -1,0 +1,98 @@
+Guia de Desenvolvimento - Versão 0.7v
+====================================================
+
+Este documento serve como referência simples para desenvolvedores e revisores que irão
+trabalhar sobre o projeto a partir da versão 0.7v. Ele descreve a estrutura atual, o
+comportamento do frontend e os pontos destinados à futura integração com o backend. (Claramente feito pelo ChatGPT)
+
+----------------------------------------------------
+1. Estrutura do Projeto
+----------------------------------------------------
+/assets/              -> Pasta contendo imagens e ícones utilizados no site.
+/assets/img/          -> Imagens dos cursos, professores e elementos visuais.
+
+index.html            -> Arquivo principal do site.
+style_home.css        -> Folha de estilo principal.
+(script incluído no navigation.js) -> Contém a lógica para abrir/fechar a sidebar e
+                                   controlar o comportamento dinâmico dos cards.
+
+----------------------------------------------------
+2. Tralhas Utilizadas
+----------------------------------------------------
+- HTML5 e CSS3 puros.
+- Bootstrap (para grid, espaçamento e responsividade).
+- Font Awesome (ícones de interface).
+- JavaScript padrão (sem dependências externas).
+
+----------------------------------------------------
+3. Estrutura das Seções Principais
+----------------------------------------------------
+
+→ Seção de Cursos (#cursos-content)
+------------------------------------
+- Cada curso é exibido em um card gerado pelo backend.
+- Estrutura do card:
+  .course-card .card-item
+    ├── .course-img (imagem ilustrativa)
+    ├── .course-content
+        ├── .course-title (nome do curso)
+        ├── .course-desc (descrição curta)
+        └── .course-info (duração e modalidade)
+
+→ Seção de Professores (#professores-content)
+----------------------------------------------
+- Reaproveita o mesmo estilo e estrutura de cards dos cursos.
+- Campos de conteúdo alterados para refletir nome, biografia e área de atuação.
+- A sidebar é a mesma dos cursos, exibindo dados do professor de forma dinâmica.
+
+----------------------------------------------------
+4. Sidebar (Painel Lateral)
+----------------------------------------------------
+- Elemento único compartilhado entre cursos e professores.
+- Exibido ao clicar em qualquer .card-item.
+- Possui rolagem própria e bloqueia o scroll do body quando ativa.
+- Fechamento via botão “×” visível no canto superior direito ou clique no overlay.
+
+→ Estrutura interna da sidebar:
+  .course-img           -> imagem principal do curso/professor
+  .course-title         -> título do item selecionado
+  .course-desc          -> texto descritivo
+  .course-info          -> informações resumidas (contato, duração, etc.)
+  #sidebarExtra          -> bloco com informações adicionais (competências, formação)
+
+----------------------------------------------------
+5. Overlay (Fundo Escurecido)
+----------------------------------------------------
+- ID: #sidebarOverlay
+- Surge automaticamente ao abrir a sidebar.
+- Fecha a sidebar ao ser clicado.
+- Evita interação com o conteúdo de fundo.
+
+----------------------------------------------------
+6. Integração com o Backend Apaga a fumaça da pistola e do revólver Chama o bom Cacique Que o bom Cacique resolve Todo mundo sabe bem o que ele já dizia acende puxa prende passa indio quer caximbo indio qr fazer fumaca
+----------------------------------------------------
+- O backend deverá preencher dinamicamente os cards de cursos e professores.
+- Locais principais:
+  #cards-cursos          -> container dos cards de cursos
+  #cards-professores     -> container dos cards de professores
+
+- Cada card deve seguir o mesmo padrão de HTML já definido.
+- As informações detalhadas para a sidebar podem ser geradas por JSON ou PHP
+  conforme a lógica escolhida pelo Hiram disléxico.
+
+----------------------------------------------------
+7. Manutenção e Expansão
+----------------------------------------------------
+- Novas seções podem seguir o mesmo padrão de estrutura e classes.
+- O CSS e o JS foram escritos para serem reaproveitados sem retrabalho.
+- Evitar duplicar IDs (há apenas um #course-sidebar global).
+- Testar sempre a responsividade após alterações de layout.
+
+----------------------------------------------------
+8. Créditos e Versão Skol que desce redondo
+----------------------------------------------------
+Frontend desenvolvido até a versão 0.7v.
+Estrutura preparada para integração de conteúdo e backend.
+
+Autor: Guilherme Henrique Ribeiro, ChatGPT e DeepSek
+Data: 09/11/25

@@ -1,10 +1,7 @@
-// Sistema de Navegação com Loading entre Sections
 document.addEventListener('DOMContentLoaded', function() {
-    // Esconder todas as seções exceto a home
     hideAllSections();
     showSection('home-content');
 
-    // Adicionar event listeners aos links de navegação
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -15,9 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navegação com loading
     function navigateToSection(sectionId) {
-        // Mapear IDs dos links para IDs das seções
         const sectionMap = {
             'home': 'home-content',
             'cursos': 'cursos-content',
@@ -30,31 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetSectionId = sectionMap[sectionId];
         
         if (targetSectionId) {
-            // 1. Primeiro ocultar o conteúdo atual
             hideAllSections();
-            
-            // 2. Mostrar loading abaixo do hero
             showSectionLoading();
             
-            // 3. Pequeno delay para efeito visual do loading
             setTimeout(() => {
-                // 4. Esconder loading
                 hideSectionLoading();
-                
-                // 5. Mostrar nova seção
                 showSection(targetSectionId);
-                
-                // 6. Atualizar navegação
                 updateActiveNav(sectionId);
-                
-                // 7. Scroll para conteúdo
                 scrollToContent();
-            }, 600); // 600ms de loading
+            }, 600);
         }
     }
 
     function showSectionLoading() {
-        // Criar elemento de loading
         const loadingHTML = `
             <div id="section-loading">
                 <div class="loading-spinner">
@@ -64,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        // Inserir loading ANTES das sections (não substituir tudo)
         const dynamicContent = document.getElementById('dynamic-content');
         const loadingElement = document.createElement('div');
         loadingElement.innerHTML = loadingHTML;
@@ -89,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const section = document.getElementById(sectionId);
         if (section) {
             section.style.display = 'block';
-            // Pequeno delay para a animação CSS funcionar
             setTimeout(() => {
                 section.style.opacity = '1';
                 section.style.transform = 'translateY(0)';
@@ -119,9 +100,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
 
-    // Inicializar navegação ativa
     updateActiveNav('home');
-    
-    // Garantir que a home esteja visível
     showSection('home-content');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var reviewsCarousel = new bootstrap.Carousel(document.getElementById('reviewsCarousel'), {
+        interval: 5000,
+        pause: 'hover', 
+        wrap: true
+    });
+});
+
+// Abrir sidebar ao clicar em um card
+document.querySelectorAll('.card-item').forEach(card => {
+    card.addEventListener('click', () => {
+            const title = card.querySelector('.course-title')?.textContent || '';
+            const desc = card.querySelector('.course-desc')?.textContent || '';
+             const img = card.querySelector('img')?.src || '';
+
+document.getElementById('sidebarTitle').textContent = title;
+document.getElementById('sidebarDesc').textContent = desc;
+document.querySelector('#course-sidebar img').src = img;
+
+const sidebar = document.getElementById('course-sidebar');
+sidebar.style.display = 'block';
+sidebar.style.animation = 'fadeIn 0.3s ease forwards';
+                    });
+                });
+
+                document.getElementById('closeSidebar').addEventListener('click', () => {
+                    const sidebar = document.getElementById('course-sidebar');
+                    sidebar.style.animation = 'fadeInUp 0.3s ease reverse forwards';
+                    setTimeout(() => (sidebar.style.display = 'none'), 250);
+                });
+
+const sidebar = document.getElementById('course-sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+const closeBtn = document.getElementById('closeSidebar');
+
+document.querySelectorAll('.card-item').forEach(card => {
+  card.addEventListener('click', () => {
+    sidebar.style.display = 'block';
+    overlay.style.display = 'block';
+    document.body.classList.add('no-scroll');
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  sidebar.style.display = 'none';
+  overlay.style.display = 'none';
+  document.body.classList.remove('no-scroll');
+});
+
+overlay.addEventListener('click', () => {
+  sidebar.style.display = 'none';
+  overlay.style.display = 'none';
+  document.body.classList.remove('no-scroll');
 });
