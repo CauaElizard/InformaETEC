@@ -1,6 +1,32 @@
+<?php
+
+$servername = "localhost";
+$username = "root"; 
+$password = "&tec77@info!"; 
+$dbname = "etec_site";
+
+try {
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die("Erro na conexão com o banco de dados: " . $e->getMessage());
+}
+
+
+$sqlCursos = "SELECT * FROM cursos";
+$stmtCursos = $pdo->prepare($sqlCursos);
+$stmtCursos->execute();
+$cursos = $stmtCursos->fetchAll(PDO::FETCH_ASSOC);
+
+
+$sqlProfessores = "SELECT * FROM professores";
+$stmtProfessores = $pdo->prepare($sqlProfessores);
+$stmtProfessores->execute();
+$professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +37,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style_home.css">
 </head>
-
 <body>
     <div id="loading-screen">
         <div class="logo-container">
@@ -21,7 +46,6 @@
             <div class="spinner"></div>
         </div>
     </div>
-
     <div id="main-content">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
@@ -59,7 +83,6 @@
                 </div>
             </div>
         </nav>
-
         <section class="hero-section" id="home-hero">
             <div class="hero-bg">
                 <img src="assets/img/faixada_escola.jpg" alt="Fachada da ETEC">
@@ -77,7 +100,6 @@
                 </div>
             </div>
         </section>
-
         <main id="dynamic-content">
             <section id="home-content" class="content-section active">
                 <div class="section-padding">
@@ -89,7 +111,6 @@
                                     odio laboriosam voluptates deleniti explicabo temporibus.</p>
                             </div>
                         </div>
-
                         <div class="row align-items-center mb-5">
                             <div class="col-lg-6 mb-4">
                                 <div class="about-content">
@@ -100,7 +121,6 @@
                                     <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
                                         dolor sit amet consectetur adipisicing elit.</p>
-
                                     <div class="about-features">
                                         <div class="about-feature">
                                             <i class="fas fa-check-circle"></i>
@@ -134,7 +154,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Porque Escolher Nossa Escola -->
                         <div class="row mb-5">
                             <div class="col-12 text-center mb-4">
@@ -181,7 +200,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Nossa História -->
                         <div class="row mb-5">
                             <div class="col-12 text-center mb-4">
@@ -198,7 +216,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Estatísticas Arrancadas de vc sabe onde -->
                         <div class="row g-4 mb-5">
                             <div class="col-12">
@@ -236,7 +253,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row mb-5">
                             <div class="col-12 text-center mb-4">
                                 <h3 class="section-title">Metodologia de Ensino</h3>
@@ -273,12 +289,10 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row mb-5">
                             <div class="col-12 text-center mb-4">
                                 <h3 class="section-title">O Que Dizem Sobre Nós</h3>
                                 <p class="hero-subtitle">Avaliações de alunos e responsáveis</p>
-
                                 <div class="d-flex justify-content-center align-items-center mb-4">
                                     <div class="text-warning me-2">
                                         <i class="fas fa-star"></i>
@@ -291,7 +305,6 @@
                                     <small class="text-muted ms-2">(69 avaliações)</small>
                                 </div>
                             </div>
-
                             <div class="col-12">
                                 <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-indicators">
@@ -304,7 +317,6 @@
                                         <button type="button" data-bs-target="#reviewsCarousel"
                                             data-bs-slide-to="3"></button>
                                     </div>
-
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
                                             <div class="row justify-content-center">
@@ -333,7 +345,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="carousel-item">
                                             <div class="row justify-content-center">
                                                 <div class="col-lg-8">
@@ -360,7 +371,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="carousel-item">
                                             <div class="row justify-content-center">
                                                 <div class="col-lg-8">
@@ -388,7 +398,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <button class="carousel-control-prev" type="button"
                                         data-bs-target="#reviewsCarousel" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon bg-primary rounded-circle p-3"></span>
@@ -403,7 +412,6 @@
                             </div>
                         </div>
             </section>
-
             <!-- Cursos -->
             <section id="cursos-content" class="content-section">
                 <div class="section-padding bg-light-custom">
@@ -413,43 +421,38 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio
                             laboriosam voluptates deleniti explicabo temporibus.
                         </p>
-
                         <div class="row" id="cards-cursos">
+                            <?php foreach ($cursos as $curso): ?>
                             <div class="col-md-4 mb-4">
-                                <div class="course-card card-item" data-id="1" data-type="curso">
+                                <div class="course-card card-item" data-id="<?php echo $curso['id']; ?>" data-type="curso">
                                     <div class="course-img">
-                                        <img src="assets/img/curso-ds.jpg" alt="Desenvolvimento de Sistemas">
+                                        <img src="<?php echo $curso['imagem']; ?>" alt="<?php echo htmlspecialchars($curso['nome']); ?>">
                                     </div>
                                     <div class="course-content">
-                                        <h3 class="course-title">Desenvolvimento de Sistemas</h3>
+                                        <h3 class="course-title"><?php echo htmlspecialchars($curso['nome']); ?></h3>
                                         <p class="course-desc">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                                            odio laboriosam voluptates deleniti explicabo temporibus.
+                                            <?php echo htmlspecialchars($curso['descricao']); ?>
                                         </p>
                                         <div class="course-info">
-                                            <span class="course-duration"><i class="fas fa-clock"></i> 3 anos</span>
-                                            <span class="course-modality"><i class="fas fa-laptop"></i>
-                                                Presencial</span>
+                                            <span class="course-duration"><i class="fas fa-clock"></i> <?php echo htmlspecialchars($curso['duracao']); ?></span>
+                                            <span class="course-modality"><i class="fas fa-laptop"></i> <?php echo htmlspecialchars($curso['modalidade']); ?></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
                         </div>
-
                     </div>
                 </div>
             </section>
-
             <div id="sidebarOverlay"
                 style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1040; transition:opacity 0.2s ease;">
             </div>
-
             <!-- Sidebar reaproveitada (claramente essa parte foi feita pelo chatgpt) -->
             <div id="course-sidebar" class="content-section active bg-light-custom"
                 style="display:none; position:fixed; top:0; right:0; width:420px; max-width:95%; height:100vh; box-shadow:-4px 0 20px rgba(0,0,0,0.15); z-index:1050;">
                 <div style="height:100%; overflow-y:auto;">
                     <div class="course-card p-4 position-relative" style="min-height:100%;">
-
                         <button id="closeSidebar" style="
           position:absolute;
           top:12px;
@@ -467,29 +470,22 @@
           justify-content:center;
           transition:all 0.2s ease;
         " title="Fechar painel">&times;</button>
-
                         <div class="course-img mb-3">
                             <img src="assets/img/curso-ds.jpg" alt="Imagem do curso" class="img-fluid rounded">
                         </div>
-
                         <div class="course-content">
-
                             <h3 class="course-title" id="sidebarTitle">Desenvolvimento de Sistemas</h3>
-
                             <p class="course-desc" id="sidebarDesc">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio
                                 laboriosam voluptates deleniti explicabo temporibus. Vitae laudantium
                                 sapiente mollitia veritatis, odit obcaecati sequi! Maxime, adipisci
                                 animi! Quaerat nobis mollitia excepturi.
                             </p>
-
                             <div class="course-info mt-3">
                                 <span class="course-duration"><i class="fas fa-clock"></i> 3 anos</span>
                                 <span class="course-modality"><i class="fas fa-laptop"></i> Presencial</span>
                             </div>
-
                             <hr class="my-4">
-
                             <div class="mb-4">
                                 <h4 class="course-title" style="font-size:1.1rem;">Principais competências desenvolvidas
                                 </h4>
@@ -500,7 +496,6 @@
                                     <li><i class="fas fa-check-circle text-primary me-2"></i> aaaaaaaaa</li>
                                 </ul>
                             </div>
-
                             <div class="mb-4">
                                 <h4 class="course-title" style="font-size:1.1rem;">Sobre o curso</h4>
                                 <p class="course-desc">
@@ -510,7 +505,6 @@
                                     deleniti consequuntur nesciunt?
                                 </p>
                             </div>
-
                             <div class="mb-4">
                                 <h4 class="course-title" style="font-size:1.1rem;">Coordenação</h4>
                                 <div class="d-flex align-items-center mt-2">
@@ -523,7 +517,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="mt-4 mb-3">
                                 <p class="text-muted" style="font-size:0.9rem;">
                                     * As informações apresentadas nesta página têm caráter informativo e
@@ -531,12 +524,10 @@
                                     sobre inscrições, consulte a área do Vestibulinho.
                                 </p>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- Professores -->
             <section id="professores-content" class="content-section">
                 <div class="section-padding bg-light-custom">
@@ -546,35 +537,30 @@
                             Conheça o corpo docente responsável por formar, orientar e inspirar nossos alunos
                             ao longo da jornada acadêmica.
                         </p>
-
                         <div class="row" id="cards-professores">
+                            <?php foreach ($professores as $professor): ?>
                             <div class="col-md-4 mb-4">
-                                <div class="course-card card-item" data-id="1" data-type="professor">
+                                <div class="course-card card-item" data-id="<?php echo $professor['id']; ?>" data-type="professor">
                                     <div class="course-img">
-                                        <img src="assets/img/professor-joao.jpg" alt="Professor Fabibi">
+                                        <img src="<?php echo $professor['imagem']; ?>" alt="<?php echo htmlspecialchars($professor['nome']); ?>">
                                     </div>
                                     <div class="course-content">
-                                        <h3 class="course-title">Prof. Fabibi</h3>
+                                        <h3 class="course-title"><?php echo htmlspecialchars($professor['nome']); ?></h3>
                                         <p class="course-desc">
-                                            põe os textos aí, Tilasco
+                                            <?php echo htmlspecialchars($professor['biografia']); ?>
                                         </p>
                                         <div class="course-info">
-                                            <span class="course-duration"><i class="fas fa-user-tie"></i> Professor de
-                                                uma penca de coisa</span>
-                                            <span class="course-modality"><i class="fas fa-envelope"></i>
-                                                joao.silva@fatec.edu.br</span>
+                                            <span class="course-duration"><i class="fas fa-user-tie"></i> <?php echo htmlspecialchars($professor['materia']); ?></span>
+                                            <span class="course-modality"><i class="fas fa-envelope"></i> <?php echo htmlspecialchars($professor['email']); ?></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
                         </div>
-
                     </div>
                 </div>
             </section>
-
-
-
             <!-- Infraestrutura -->
             <section id="infraestrutura-content" class="content-section">
                 <div class="section-padding">
@@ -582,7 +568,6 @@
                         <h2 class="section-title">Infraestrutura Completa</h2>
                         <p class="text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio
                             laboriosam voluptates deleniti explicabo temporibus.</p>
-
                         <div class="row align-items-center mb-5">
                             <div class="col-lg-6 mb-4">
                                 <div class="about-image">
@@ -615,7 +600,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row align-items-center mb-5">
                             <div class="col-lg-6 mb-4 order-lg-2">
                                 <div class="about-image">
@@ -648,7 +632,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row align-items-center mb-5">
                             <div class="col-lg-6 mb-4">
                                 <div class="about-image">
@@ -681,7 +664,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row align-items-center mb-5">
                             <div class="col-lg-6 mb-4 order-lg-2">
                                 <div class="about-image">
@@ -706,7 +688,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row mb-5">
                             <div class="col-12 text-center mb-4">
                                 <h3 class="section-title">Outras Instalações</h3>
@@ -742,8 +723,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="row">
                             <div class="col-12 text-center mb-4">
                                 <h3 class="section-title">Galeria de Instalações</h3>
@@ -780,7 +759,6 @@
                     </div>
                 </div>
             </section>
-
             <!-- Vestibulinho -->
             <section id="vestibulinho-content" class="content-section">
                 <div class="section-padding bg-light-custom">
@@ -827,7 +805,6 @@
                     </div>
                 </div>
             </section>
-
             <!-- Contato -->
             <section id="contato-content" class="content-section">
                 <div class="section-padding">
@@ -883,7 +860,6 @@
                 </div>
             </section>
         </main>
-
         <footer>
             <div class="container">
                 <div class="row">
@@ -921,10 +897,8 @@
             </div>
         </footer>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/loading_indicator.js"></script>
     <script src="assets/js/navigation.js"></script>
 </body>
-
 </html>
