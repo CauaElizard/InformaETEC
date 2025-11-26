@@ -90,8 +90,7 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="hero-content fade-in">
                     <h1 class="hero-title">ETEC Prof. <span class="hero-highlight">Jose Sant'Ana de Castro</span></h1>
-                    <p class="hero-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio
-                        laboriosam voluptates deleniti explicabo temporibus.</p>
+                    <p class="hero-subtitle">Uma escola que combina Ensino Médio e formação técnica oferecendo aos alunos uma educação integral alinhada às demandas do mercado e da sociedade.</p>
                     <div class="hero-logos">
                         <img src="assets/img/logo_CPS.png" alt="Centro Paula Souza" class="hero-logo">
                         <img src="assets/img/logomarca-sp.png" alt="Governo de São Paulo" class="hero-logo">
@@ -107,50 +106,22 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                         <div class="row mb-5">
                             <div class="col-12 text-center">
                                 <h2 class="section-title">Bem-vindo à ETEC Prof. Jose Sant'Ana de Castro</h2>
-                                <p class="hero-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                                    odio laboriosam voluptates deleniti explicabo temporibus.</p>
+                                <p class="hero-subtitle">Uma informação bem estruturada é capaz de gerar clareza e satisfação, pois oferece ao usuário a sensação de compreensão e promove interações mais eficientes e significativas.</p>
                             </div>
                         </div>
                         <div class="row align-items-center mb-5">
                             <div class="col-lg-6 mb-4">
                                 <div class="about-content">
                                     <h3 class="about-subtitle">Transformando Vidas Através da Educação</h3>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit.</p>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit.</p>
-                                    <div class="about-features">
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Lorem ipsum dolor sit amet consectetur</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Adipisicing elit sed do eiusmod tempor</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Incididunt ut labore et dolore magna</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Aliqua ut enim ad minim veniam quis</span>
-                                        </div>
-                                    </div>
+                                    <p class="about-text">A educação tem o poder de abrir portas, criar oportunidades e transformar realidades. Quando o acesso à informação é garantido e bem estruturado, o estudante passa a compreender melhor seus caminhos e faz escolhas mais seguras para seu futuro. Projetos como o InformaETEC reforçam essa transformação ao oferecer clareza sobre cursos, professores e ambientes escolares, contribuindo para decisões mais conscientes. Assim, por meio do conhecimento, é possível reduzir a evasão, fortalecer a autonomia dos jovens e construir trajetórias educacionais mais sólidas, mostrando que educar é, acima de tudo, transformar vidas.</p>
+                                    
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-4">
                                 <div class="about-image position-relative">
                                     <img src="assets/img/faixada_escola.jpg" alt="Nossa Escola"
                                         class="img-fluid rounded">
-                                    <div class="position-absolute top-0 start-0 m-3">
-                                        <span class="badge bg-accent text-dark p-2">Põe algo aqui</span>
-                                    </div>
-                                    <div class="position-absolute bottom-0 end-0 m-3">
-                                        <span class="badge bg-primary text-white p-2">Aqui tbm</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -164,9 +135,8 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="feature-icon">
                                         <i class="fas fa-graduation-cap"></i>
                                     </div>
-                                    <h3 class="feature-title">Depressão Acadêmica</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
+                                    <h3 class="feature-title">Formação Acadêmica</h3>
+                                    <p>Os cursos técnicos são estruturados para atender às demandas reais do mercado, aumentando as oportunidades de empregabilidade. Alunos formados em ensino técnico têm maiores taxas de inserção profissional e melhores perspectivas salariais, como apontam pesquisas recentes citadas na documentação.</p>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
@@ -174,9 +144,8 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="feature-icon">
                                         <i class="fas fa-briefcase"></i>
                                     </div>
-                                    <h3 class="feature-title">Foco no Desemprego</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
+                                    <h3 class="feature-title">Foco no Emprego</h3>
+                                    <p>Os cursos técnicos são estruturados para atender às demandas reais do mercado, aumentando as oportunidades de empregabilidade. Alunos formados em ensino técnico têm maiores taxas de inserção profissional e melhores perspectivas salariais, como apontam pesquisas recentes citadas na documentação.</p>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
@@ -184,9 +153,8 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="feature-icon">
                                         <i class="fas fa-users"></i>
                                     </div>
-                                    <h3 class="feature-title">Comunidade desengajada</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
+                                    <h3 class="feature-title">Comunidade Engajada</h3>
+                                    <p>A escola conta com professores qualificados, infraestrutura adequada e um ambiente que valoriza o protagonismo estudantil. Projetos como o Centro Interdisciplinar de Ciências estimulam colaboração, criatividade e autonomia, fortalecendo o vínculo entre alunos e comunidade escolar.</p>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
@@ -194,9 +162,8 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="feature-icon">
                                         <i class="fas fa-hand-holding-heart"></i>
                                     </div>
-                                    <h3 class="feature-title">Fiquei sem ideia de o que colocar aqui</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
+                                    <h3 class="feature-title">Apoio e Acompanhamento ao Estudante</h3>
+                                    <p>A instituição oferece orientação constante para ajudar o aluno a compreender cada curso, sua rotina e suas possibilidades futuras. Esse suporte diminui dúvidas na escolha do curso, reduz a evasão escolar e garante que cada estudante trilhe um caminho mais seguro e alinhado aos seus objetivos.</p>
                                 </div>
                             </div>
                         </div>
@@ -206,13 +173,12 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                                 <h3 class="section-title">Nossa História</h3>
                             </div>
                             <div class="col-lg-8 mx-auto">
-                                <div class="about-content text-center">
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit.</p>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="about-content">
+                                    <p class="about-text">A ETEC Prof. José Sant’Ana de Castro, localizada em Cruzeiro (SP), foi criada pelo Decreto Estadual nº 51.334/1969. Inicialmente, funcionava junto a duas escolas de ensino fundamental, passando por várias mudanças estruturais e denominações ao longo das décadas. A partir dos anos 1970 e 1980, consolidou-se como instituição voltada ao ensino profissionalizante, oferecendo cursos técnicos como Mecânica, Enfermagem e formação para o magistério. Em 1994, passou a integrar oficialmente o Centro Paula Souza.</p>
+                                    <p class="about-text">Com a LDB de 1996, a escola ampliou sua atuação no ensino técnico, atendendo estudantes do ensino médio regular ou já formado. Em 2019, completou 50 anos, tendo formado milhares de profissionais para o mercado de trabalho.</p>
+                                    <p class="about-text">Localizada em uma área estratégica do Vale do Paraíba, a ETEC recebe alunos de diversas cidades de São Paulo, Minas Gerais e Rio de Janeiro, beneficiada por sua proximidade com grandes rodovias e pela variedade econômica regional.</p>
+                                    <p class="about-text">Atualmente, oferece Ensino Médio integrado com habilitações técnicas em Mecânica e Desenvolvimento de Sistemas, além de cursos Novotec integrados como Logística, Marketing, Edificações e Nutrição. Também conta com itinerários formativos em Ciências Biológicas e Ciências da Natureza, parceria com a SEDUC para Informática para Internet, e cursos técnicos modulares noturnos em diversas áreas, incluindo Administração, Gastronomia, Informática, Mecânica e o novo curso de Desenho da Construção Civil.</p>
+                                    <p class="about-text">A última década marcou importantes avanços: implantação do ensino integral (2012), eventos de empreendedorismo (2016), chegada do modelo Mtec (2020), programa de energia solar (2021), criação do evento Startec (2021 e 2023), retorno da EXPOTIN (2022) e expansão de cursos técnicos. A escola também fortaleceu sua presença digital com Facebook, Instagram e o lançamento de seu canal no YouTube.</p>
                                 </div>
                             </div>
                         </div>
@@ -264,8 +230,7 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                                         <i class="fas fa-flask"></i>
                                     </div>
                                     <h3 class="feature-title">Aprendizado Prático</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
+                                    <p>Atividades e projetos em laboratórios que aproximam o aluno da realidade profissional.</p>
                                 </div>
                             </div>
                             <div class="col-md-4 mb-4">
@@ -274,8 +239,7 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                                         <i class="fas fa-users"></i>
                                     </div>
                                     <h3 class="feature-title">Trabalho em Equipe</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
+                                    <p>Projetos integradores que desenvolvem colaboração, comunicação e solução conjunta de problemas.</p>
                                 </div>
                             </div>
                             <div class="col-md-4 mb-4">
@@ -284,133 +248,12 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                                         <i class="fas fa-brain"></i>
                                     </div>
                                     <h3 class="feature-title">Pensamento Crítico</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
+                                    <p>Estímulo à análise, investigação e tomada de decisão por meio de desafios reais.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-5">
-                            <div class="col-12 text-center mb-4">
-                                <h3 class="section-title">O Que Dizem Sobre Nós</h3>
-                                <p class="hero-subtitle">Avaliações de alunos e responsáveis</p>
-                                <div class="d-flex justify-content-center align-items-center mb-4">
-                                    <div class="text-warning me-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <strong class="text-primary fs-4 ms-2">4.8</strong>
-                                    <small class="text-muted ms-2">(69 avaliações)</small>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-indicators">
-                                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0"
-                                            class="active"></button>
-                                        <button type="button" data-bs-target="#reviewsCarousel"
-                                            data-bs-slide-to="1"></button>
-                                        <button type="button" data-bs-target="#reviewsCarousel"
-                                            data-bs-slide-to="2"></button>
-                                        <button type="button" data-bs-target="#reviewsCarousel"
-                                            data-bs-slide-to="3"></button>
-                                    </div>
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <div class="row justify-content-center">
-                                                <div class="col-lg-8">
-                                                    <div class="teacher-card text-center mx-auto"
-                                                        style="max-width: 600px;">
-                                                        <div class="teacher-avatar">
-                                                            <i class="fas fa-user-graduate"></i>
-                                                        </div>
-                                                        <h4 class="teacher-name">Flor de Liz</h4>
-                                                        <div class="teacher-subject">
-                                                            <div class="text-warning mb-2">
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                            </div>
-                                                            <small class="text-muted">Aluna de Desenvolvimento de
-                                                                Sistemas</small>
-                                                        </div>
-                                                        <p class="teacher-bio">"Lorem ipsum dolor sit amet consectetur
-                                                            adipisicing elit. Quidem odio laboriosam voluptates deleniti
-                                                            explicabo temporibus."</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="row justify-content-center">
-                                                <div class="col-lg-8">
-                                                    <div class="teacher-card text-center mx-auto"
-                                                        style="max-width: 600px;">
-                                                        <div class="teacher-avatar">
-                                                            <i class="fas fa-user"></i>
-                                                        </div>
-                                                        <h4 class="teacher-name">Tio Paulo</h4>
-                                                        <div class="teacher-subject">
-                                                            <div class="text-warning mb-2">
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                            </div>
-                                                            <small class="text-muted">Pai de Aluno</small>
-                                                        </div>
-                                                        <p class="teacher-bio">"Lorem ipsum dolor sit amet consectetur
-                                                            adipisicing elit. Quidem odio laboriosam voluptates deleniti
-                                                            explicabo temporibus."</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="row justify-content-center">
-                                                <div class="col-lg-8">
-                                                    <div class="teacher-card text-center mx-auto"
-                                                        style="max-width: 600px;">
-                                                        <div class="teacher-avatar">
-                                                            <i class="fas fa-user-graduate"></i>
-                                                        </div>
-                                                        <h4 class="teacher-name">Pessoa</h4>
-                                                        <div class="teacher-subject">
-                                                            <div class="text-warning mb-2">
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="far fa-star"></i>
-                                                            </div>
-                                                            <small class="text-muted">Ex-Aluno de poha nenhuma</small>
-                                                        </div>
-                                                        <p class="teacher-bio">"Lorem ipsum dolor sit amet consectetur
-                                                            adipisicing elit. Quidem odio laboriosam voluptates deleniti
-                                                            explicabo temporibus."</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#reviewsCarousel" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon bg-primary rounded-circle p-3"></span>
-                                        <span class="visually-hidden">Anterior</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                        data-bs-target="#reviewsCarousel" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon bg-primary rounded-circle p-3"></span>
-                                        <span class="visually-hidden">Próximo</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                            
             </section>
             <!-- Cursos -->
             <section id="cursos-content" class="content-section">
