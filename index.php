@@ -71,7 +71,7 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                             <a class="nav-link" href="#infraestrutura">Infraestrutura</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#vestibulinho">Vestibulinho</a>
+                            <a class="nav-link" href="https://vestibulinho.etec.sp.gov.br/home/">Vestibulinho</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contato">Contato</a>
@@ -174,11 +174,25 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <div class="col-lg-8 mx-auto">
                                 <div class="about-content">
-                                    <p class="about-text">A ETEC Prof. José Sant’Ana de Castro, localizada em Cruzeiro (SP), foi criada pelo Decreto Estadual nº 51.334/1969. Inicialmente, funcionava junto a duas escolas de ensino fundamental, passando por várias mudanças estruturais e denominações ao longo das décadas. A partir dos anos 1970 e 1980, consolidou-se como instituição voltada ao ensino profissionalizante, oferecendo cursos técnicos como Mecânica, Enfermagem e formação para o magistério. Em 1994, passou a integrar oficialmente o Centro Paula Souza.</p>
-                                    <p class="about-text">Com a LDB de 1996, a escola ampliou sua atuação no ensino técnico, atendendo estudantes do ensino médio regular ou já formado. Em 2019, completou 50 anos, tendo formado milhares de profissionais para o mercado de trabalho.</p>
-                                    <p class="about-text">Localizada em uma área estratégica do Vale do Paraíba, a ETEC recebe alunos de diversas cidades de São Paulo, Minas Gerais e Rio de Janeiro, beneficiada por sua proximidade com grandes rodovias e pela variedade econômica regional.</p>
-                                    <p class="about-text">Atualmente, oferece Ensino Médio integrado com habilitações técnicas em Mecânica e Desenvolvimento de Sistemas, além de cursos Novotec integrados como Logística, Marketing, Edificações e Nutrição. Também conta com itinerários formativos em Ciências Biológicas e Ciências da Natureza, parceria com a SEDUC para Informática para Internet, e cursos técnicos modulares noturnos em diversas áreas, incluindo Administração, Gastronomia, Informática, Mecânica e o novo curso de Desenho da Construção Civil.</p>
-                                    <p class="about-text">A última década marcou importantes avanços: implantação do ensino integral (2012), eventos de empreendedorismo (2016), chegada do modelo Mtec (2020), programa de energia solar (2021), criação do evento Startec (2021 e 2023), retorno da EXPOTIN (2022) e expansão de cursos técnicos. A escola também fortaleceu sua presença digital com Facebook, Instagram e o lançamento de seu canal no YouTube.</p>
+                                    <p class="about-text">A ETEC Prof. José Sant’Ana de Castro, localizada em Cruzeiro (SP), foi criada 
+                                        pelo Decreto Estadual nº 51.334/1969. Inicialmente, funcionava junto a duas escolas de ensino 
+                                        fundamental, passando por várias mudanças estruturais e denominações ao longo das décadas. A 
+                                        partir dos anos 1970 e 1980, consolidou-se como instituição voltada ao ensino profissionalizante
+                                        , oferecendo cursos técnicos como Mecânica, Enfermagem e formação para o magistério. Em 1994, 
+                                        passou a integrar oficialmente o Centro Paula Souza.</p>
+                                    <p class="about-text">Com a LDB de 1996, a escola ampliou sua atuação no ensino técnico, atendendo 
+                                        estudantes do ensino médio regular ou já formado. Em 2019, completou 50 anos, tendo formado
+                                        milhares de profissionais para o mercado de trabalho.</p>
+                                    <p class="about-text">Localizada em uma área estratégica do Vale do Paraíba, a ETEC recebe alunos
+                                        de diversas cidades de São Paulo, Minas Gerais e Rio de Janeiro, beneficiada por sua 
+                                        proximidade com grandes rodovias e pela variedade econômica regional.</p>
+                                    <p class="about-text">Atualmente, oferece Ensino Médio integrado com habilitações técnicas em 
+                                        Mecânica e Desenvolvimento de Sistemas, além de cursos Novotec integrados como Logística, Marketing, Edificações e Nutrição. Também conta com itinerários formativos em Ciências Biológicas e Ciências da Natureza, parceria com a SEDUC para Informática para Internet, e cursos técnicos modulares noturnos em diversas áreas, incluindo Administração, Gastronomia, Informática, Mecânica e o novo curso de Desenho da Construção Civil.</p>
+                                    <p class="about-text">A última década marcou importantes avanços: implantação do ensino integral
+                                        (2012), eventos de empreendedorismo (2016), chegada do modelo Mtec (2020), programa de energia
+                                        solar (2021), criação do evento Startec (2021 e 2023), retorno da EXPOTIN (2022) e expansão
+                                        de cursos técnicos. A escola também fortaleceu sua presença digital com Facebook, Instagram 
+                                        e o lançamento de seu canal no YouTube.</p>
                                 </div>
                             </div>
                         </div>
@@ -406,247 +420,85 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
             </section>
             <!-- Infraestrutura -->
             <section id="infraestrutura-content" class="content-section">
-                <div class="section-padding">
-                    <div class="container">
-                        <h2 class="section-title">Infraestrutura Completa</h2>
-                        <p class="text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio
-                            laboriosam voluptates deleniti explicabo temporibus.</p>
-                        <div class="row align-items-center mb-5">
-                            <div class="col-lg-6 mb-4">
-                                <div class="about-image">
-                                    <img src="assets/img/faixada_escola.jpg" alt="Laboratórios de Informática"
-                                        class="img-fluid rounded shadow-sm">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-4">
-                                <div class="about-content">
-                                    <h3 class="about-subtitle">Laboratórios de Informática</h3>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit.</p>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus.</p>
-                                    <div class="about-features">
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Computadores origem duvidosa</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Softwares terceirizados</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Ambiente climatizado</span>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center mb-4">
+                            <h3 class="section-title">Galeria de Instalações</h3>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
                             </div>
                         </div>
-                        <div class="row align-items-center mb-5">
-                            <div class="col-lg-6 mb-4 order-lg-2">
-                                <div class="about-image">
-                                    <img src="assets/img/faixada_escola.jpg" alt="Biblioteca"
-                                        class="img-fluid rounded shadow-sm">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-4 order-lg-1">
-                                <div class="about-content">
-                                    <h3 class="about-subtitle">Biblioteca</h3>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit.</p>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus.</p>
-                                    <div class="about-features">
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Acervo com livros que ninguém lê</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Ambiente de estudo cheio de gente chata</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Computadores para pesquisa, mas meio véios</span>
-                                        </div>
-                                    </div>
-                                </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio2.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio2.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
                             </div>
                         </div>
-                        <div class="row align-items-center mb-5">
-                            <div class="col-lg-6 mb-4">
-                                <div class="about-image">
-                                    <img src="assets/img/faixada_escola.jpg" alt="Laboratórios Científicos"
-                                        class="img-fluid rounded shadow-sm">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-4">
-                                <div class="about-content">
-                                    <h3 class="about-subtitle">Laboratórios Científicos</h3>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit.</p>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus.</p>
-                                    <div class="about-features">
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Equipamentos meio capengas</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Não há materiais para experimentos</span>
-                                        </div>
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Segurança e só isso mesmo</span>
-                                        </div>
-                                    </div>
-                                </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio3.jpeg', 'Auditório')">
+                                <img src="public/imagens/cpd.heic" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
                             </div>
                         </div>
-                        <div class="row align-items-center mb-5">
-                            <div class="col-lg-6 mb-4 order-lg-2">
-                                <div class="about-image">
-                                    <img src="assets/img/faixada_escola.jpg" alt="Área Esportiva"
-                                        class="img-fluid rounded shadow-sm">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-4 order-lg-1">
-                                <div class="about-content">
-                                    <h3 class="about-subtitle">Quadra</h3>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit.</p>
-                                    <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus.</p>
-                                    <div class="about-features">
-                                        <div class="about-feature">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Quadra poliesportiva coberta</span>
-                                        </div>
-                                    </div>
-                                </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
                             </div>
                         </div>
-                        <div class="row mb-5">
-                            <div class="col-12 text-center mb-4">
-                                <h3 class="section-title">Outras Instalações</h3>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="feature-box text-center">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-utensils"></i>
-                                    </div>
-                                    <h3 class="feature-title">Cantina e Refeitório</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="feature-box text-center">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-wifi"></i>
-                                    </div>
-                                    <h3 class="feature-title">Internet de Alta Velocidade</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="feature-box text-center">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-theater-masks"></i>
-                                    </div>
-                                    <h3 class="feature-title">Auditório</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio laboriosam
-                                        voluptates deleniti explicabo temporibus.</p>
-                                </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12 text-center mb-4">
-                                <h3 class="section-title">Galeria de Instalações</h3>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <div class="infra-gallery-item">
-                                    <img src="assets/img/faixada_escola.jpg" alt="Laboratório de Informática"
-                                        class="img-fluid rounded shadow-sm">
-                                    <p class="text-center mt-2 fw-medium">Laboratório de Informática</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <div class="infra-gallery-item">
-                                    <img src="assets/img/faixada_escola.jpg" alt="Biblioteca"
-                                        class="img-fluid rounded shadow-sm">
-                                    <p class="text-center mt-2 fw-medium">Biblioteca</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <div class="infra-gallery-item">
-                                    <img src="assets/img/faixada_escola.jpg" alt="Laboratório Científico"
-                                        class="img-fluid rounded shadow-sm">
-                                    <p class="text-center mt-2 fw-medium">Laboratório Científico</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <div class="infra-gallery-item">
-                                    <img src="assets/img/faixada_escola.jpg" alt="Quadra Esportiva"
-                                        class="img-fluid rounded shadow-sm">
-                                    <p class="text-center mt-2 fw-medium">Quadra Esportiva</p>
-                                </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
                             </div>
                         </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            </div>
+                        </div>
+
+                        <!-- Adicione mais itens conforme necessário... -->
                     </div>
                 </div>
             </section>
-            <!-- Vestibulinho -->
-            <section id="vestibulinho-content" class="content-section">
-                <div class="section-padding bg-light-custom">
-                    <div class="container">
-                        <h2 class="section-title">Processo Seletivo</h2>
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 mb-4">
-                                <div class="admission-info">
-                                    <h3 class="admission-subtitle">Lorem Ipsum Dolor</h3>
-                                    <p class="admission-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Quidem odio laboriosam voluptates deleniti explicabo temporibus.</p>
-                                    <div class="admission-details">
-                                        <div class="admission-detail">
-                                            <i class="fas fa-calendar-alt"></i>
-                                            <div>
-                                                <strong>Lorem Ipsum</strong>
-                                                <p>Lorem ipsum dolor sit amet</p>
-                                            </div>
-                                        </div>
-                                        <div class="admission-detail">
-                                            <i class="fas fa-file-alt"></i>
-                                            <div>
-                                                <strong>Dolor Sit Amet</strong>
-                                                <p>Consectetur adipiscing elit</p>
-                                            </div>
-                                        </div>
-                                        <div class="admission-detail">
-                                            <i class="fas fa-graduation-cap"></i>
-                                            <div>
-                                                <strong>Consectetur</strong>
-                                                <p>Sed do eiusmod tempor</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-4">
-                                <div class="admission-image text-center">
-                                    <i class="fas fa-university admission-icon"></i>
-                                    <p class="mt-3">Lorem ipsum dolor sit amet consectetur</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Modal de Imagem Expandida -->
+            <div id="imageModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="expandedImg">
+                <div id="caption"></div>
+            </div>
             </section>
             <!-- Contato -->
             <section id="contato-content" class="content-section">
@@ -743,5 +595,28 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/loading_indicator.js"></script>
     <script src="assets/js/navigation.js"></script>
+    <script>
+        function openModal(imgSrc, captionText) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("expandedImg");
+            const caption = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            caption.innerHTML = captionText;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Fecha o modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>
 </body>
 </html>
