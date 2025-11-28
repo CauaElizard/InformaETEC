@@ -427,65 +427,51 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 
                         <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
-                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
-                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/labCientifico.png', 'Laboratório Científico')">
+                                <img src="public/imagens/labCientifico.png" alt="Laboratório Científico" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Laboratório Científico</p>
                             </div>
                         </div>
 
                         <div class="col-md-4 mb-4">
                             <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio2.jpeg', 'Auditório')">
-                                <img src="public/imagens/auditorio2.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <img src="public/imagens/auditorio3.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
                                 <p class="text-center mt-2 fw-medium">Auditório</p>
                             </div>
                         </div>
 
                         <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio3.jpeg', 'Auditório')">
-                                <img src="public/imagens/cpd.heic" alt="Auditório" class="img-fluid rounded shadow-sm">
-                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/biblioteca4.png', 'Biblioteca')">
+                                <img src="public/imagens/biblioteca4.png" alt="bilbioteca" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Biblioteca</p>
                             </div>
                         </div>
 
                         <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
-                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
-                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/patio3.png', 'Patio')">
+                                <img src="public/imagens/patio3.png" alt="Patio" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Patio</p>
                             </div>
                         </div>
 
                         <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
-                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
-                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/laguinho.png', 'Laguinho')">
+                                <img src="public/imagens/laguinho.png" alt="Laguinho" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Laguinho</p>
                             </div>
                         </div>
 
                         <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
-                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
-                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/labMecanica.png', 'Laboratório de Mecanica')">
+                                <img src="public/imagens/labMecanica.png" alt="Laboratório de Mecanica" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Laboratório de Mecanica</p>
                             </div>
                         </div>
 
                         <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
-                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
-                                <p class="text-center mt-2 fw-medium">Auditório</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
-                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
-                                <p class="text-center mt-2 fw-medium">Auditório</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio.jpeg', 'Auditório')">
-                                <img src="public/imagens/auditorio.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
-                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/biblioteca4.png', 'Biblioteca')">
+                                <img src="public/imagens/biblioteca4.png" alt="bilbioteca" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Biblioteca</p>
                             </div>
                         </div>
 
