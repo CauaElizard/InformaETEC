@@ -434,8 +434,15 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 
                         <div class="col-md-4 mb-4">
-                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio2.jpeg', 'Auditório')">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio3.jpeg', 'Auditório')">
                                 <img src="public/imagens/auditorio3.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Auditório</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/auditorio2.jpeg', 'Auditório')">
+                                <img src="public/imagens/auditorio2.jpeg" alt="Auditório" class="img-fluid rounded shadow-sm">
                                 <p class="text-center mt-2 fw-medium">Auditório</p>
                             </div>
                         </div>
@@ -475,7 +482,152 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
 
-                        <!-- Adicione mais itens conforme necessário... -->
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/cpd.png', 'Centro de Processamento de Dados')">
+                                <img src="public/imagens/cpd.png" alt="Centro de Processamento de Dados" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Centro de Processamento de Dados</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/edificacao.PNG', 'Edificações')">
+                                <img src="public\imagens\edificacao.PNG" alt="Edificações" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Edificações</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/entradaSecretaria.PNG', 'Secretaria')">
+                                <img src="public\imagens\entradaSecretaria.PNG" alt="Secretaria" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Secretaria</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/esperimento.PNG', 'Laboratório Científico')">
+                                <img src="public\imagens\esperimento.PNG" alt="Laboratório Científico" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Laboratório Científico</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/estudio.PNG', 'Estudio de Gravações')">
+                                <img src="public\imagens\estudio.PNG" alt="Estudio de Gravações" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Estudio de Gravações</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/faixada2.PNG', 'Faixada')">
+                                <img src="public\imagens\faixada2.PNG" alt="Faixada" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Faixada</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/lab1.PNG', 'Laboratório de Informática')">
+                                <img src="public\imagens\lab1.PNG" alt="Laboratório de Informática" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Laboratório de Informática</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/lab2.PNG', 'Laboratório de Informática')">
+                                <img src="public\imagens\lab2.PNG" alt="Laboratório de Informática" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Laboratório de Informática</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/lab4.PNG', 'Laboratório de Informática')">
+                                <img src="public\imagens\lab4.PNG" alt="Laboratório de Informática" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Laboratório de Informática</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/lazer.PNG', 'Área Verde')">
+                                <img src="public\imagens\lazer.PNG" alt="Área Verde" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Área Verde</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/lazer2.PNG', 'Área Verde')">
+                                <img src="public\imagens\lazer2.PNG" alt="Área Verde" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Área Verde</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/orta.PNG', 'Orta')">
+                                <img src="public\imagens\orta.PNG" alt="Orta" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Orta</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/patio.PNG', 'Pátio')">
+                                <img src="public\imagens\patio.PNG" alt="Pátio" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Pátio</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/patio2.PNG', 'Pátio')">
+                                <img src="public\imagens\patio2.PNG" alt="Pátio" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Pátio</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/patio4.PNG', 'Pátio')">
+                                <img src="public\imagens\patio4.PNG" alt="Pátio" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Pátio</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/quadraExterna.PNG', 'Quadra Externa')">
+                                <img src="public\imagens\quadraExterna.PNG" alt="Quadra Externa" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Quadra Externa</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/quadraInterna.PNG', 'Quadra Interma')">
+                                <img src="public\imagens\quadraInterna.PNG" alt="Quadra Interma" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Quadra Interma</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/refeitorio.PNG', 'Refeitorio')">
+                                <img src="public\imagens\refeitorio.PNG" alt="Refeitorio" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Refeitorio</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/sala.PNG', 'Sala de Aula')">
+                                <img src="public\imagens\sala.PNG" alt="Sala de Aula" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Sala de Aula</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/salaMaker.PNG', 'Sala Maker')">
+                                <img src="public\imagens\salaMaker.PNG" alt="Sala Maker" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Sala Maker</p>
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-4 mb-4">
+                            <div class="infra-gallery-item" onclick="openModal('public/imagens/secretaria.PNG', 'Secretaria')">
+                                <img src="public\imagens\secretaria.PNG" alt="Secretaria" class="img-fluid rounded shadow-sm">
+                                <p class="text-center mt-2 fw-medium">Secretaria</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
