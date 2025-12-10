@@ -1,18 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+
+    /* ==========================================
+       CONTROLE DE SEÇÕES (NAVIGATION)
+    ========================================== */
+
     hideAllSections();
     showSection('home-content');
 
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href').substring(1);
             navigateToSection(targetId);
         });
     });
 
     function navigateToSection(sectionId) {
+
         const sectionMap = {
             'home': 'home-content',
             'cursos': 'cursos-content',
@@ -23,11 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         const targetSectionId = sectionMap[sectionId];
-        
+
         if (targetSectionId) {
             hideAllSections();
             showSectionLoading();
-            
+
             setTimeout(() => {
                 hideSectionLoading();
                 showSection(targetSectionId);
@@ -39,14 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showSectionLoading() {
         const loadingHTML = `
-            <div id="section-loading">
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                    <p>Carregando conteúdo...</p>
-                </div>
+        <div id="section-loading">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Carregando conteúdo...</p>
             </div>
-        `;
-        
+        </div>`;
+
         const dynamicContent = document.getElementById('dynamic-content');
         const loadingElement = document.createElement('div');
         loadingElement.innerHTML = loadingHTML;
@@ -55,14 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function hideSectionLoading() {
         const loading = document.getElementById('section-loading');
-        if (loading) {
-            loading.remove();
-        }
+        if (loading) loading.remove();
     }
 
     function hideAllSections() {
-        const sections = document.querySelectorAll('.content-section');
-        sections.forEach(section => {
+        document.querySelectorAll('.content-section').forEach(section => {
             section.style.display = 'none';
         });
     }
@@ -79,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateActiveNav(activeId) {
-        const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${activeId}`) {
@@ -89,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function scrollToContent() {
-        const heroHeight = document.querySelector('.hero-section').offsetHeight;
-        const navHeight = document.querySelector('.navbar').offsetHeight;
-        
+        const heroHeight = document.querySelector('.hero-section')?.offsetHeight || 0;
+        const navHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+
         setTimeout(() => {
             window.scrollTo({
                 top: heroHeight - navHeight + 20,
@@ -102,59 +103,58 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateActiveNav('home');
     showSection('home-content');
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var reviewsCarousel = new bootstrap.Carousel(document.getElementById('reviewsCarousel'), {
-        interval: 5000,
-        pause: 'hover', 
-        wrap: true
-    });
-});
 
-// Abrir sidebar ao clicar em um card
-document.querySelectorAll('.card-item').forEach(card => {
-    card.addEventListener('click', () => {
+    /* ==========================================
+       SIDEBAR DE CURSOS
+    ========================================== */
+
+    const sidebar = document.getElementById('course-sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const closeBtn = document.getElementById('closeSidebar');
+    const navbar = document.querySelector('.navbar');
+
+    // 🔥 ABRIR A SIDEBAR DE CURSOS
+    document.querySelectorAll('.card-item').forEach(card => {
+        card.addEventListener('click', () => {
+
+            // ⚠️ GARANTE QUE A SECTION CURSOS ESTÁ VISÍVEL
+            hideAllSections();
+            showSection('cursos-content');
+
+            // Coletar dados
             const title = card.querySelector('.course-title')?.textContent || '';
             const desc = card.querySelector('.course-desc')?.textContent || '';
-             const img = card.querySelector('img')?.src || '';
+            const img = card.querySelector('img')?.src || '';
 
-document.getElementById('sidebarTitle').textContent = title;
-document.getElementById('sidebarDesc').textContent = desc;
-document.querySelector('#course-sidebar img').src = img;
+            document.getElementById('sidebarTitle').textContent = title;
+            document.getElementById('sidebarDesc').textContent = desc;
+            document.querySelector('#course-sidebar img').src = img;
 
-const sidebar = document.getElementById('course-sidebar');
-sidebar.style.display = 'block';
-sidebar.style.animation = 'fadeIn 0.3s ease forwards';
-                    });
-                });
+            sidebar.style.display = 'block';
+            overlay.style.display = 'block';
 
-                document.getElementById('closeSidebar').addEventListener('click', () => {
-                    const sidebar = document.getElementById('course-sidebar');
-                    sidebar.style.animation = 'fadeInUp 0.3s ease reverse forwards';
-                    setTimeout(() => (sidebar.style.display = 'none'), 250);
-                });
+            document.body.classList.add('no-scroll');
 
-const sidebar = document.getElementById('course-sidebar');
-const overlay = document.getElementById('sidebarOverlay');
-const closeBtn = document.getElementById('closeSidebar');
+            // Sumir navbar apenas na sidebar dos cursos
+            navbar.style.display = 'none';
+        });
+    });
 
-document.querySelectorAll('.card-item').forEach(card => {
-  card.addEventListener('click', () => {
-    sidebar.style.display = 'block';
-    overlay.style.display = 'block';
-    document.body.classList.add('no-scroll');
-  });
-});
+    // FECHAR SIDEBAR — botão X
+    closeBtn.addEventListener('click', () => {
+        sidebar.style.display = 'none';
+        overlay.style.display = 'none';
+        document.body.classList.remove('no-scroll');
+        navbar.style.display = 'flex';
+    });
 
-closeBtn.addEventListener('click', () => {
-  sidebar.style.display = 'none';
-  overlay.style.display = 'none';
-  document.body.classList.remove('no-scroll');
-});
+    // FECHAR SIDEBAR — clicar no fundo
+    overlay.addEventListener('click', () => {
+        sidebar.style.display = 'none';
+        overlay.style.display = 'none';
+        document.body.classList.remove('no-scroll');
+        navbar.style.display = 'flex';
+    });
 
-overlay.addEventListener('click', () => {
-  sidebar.style.display = 'none';
-  overlay.style.display = 'none';
-  document.body.classList.remove('no-scroll');
 });

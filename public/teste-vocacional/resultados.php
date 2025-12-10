@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+/*
+  resultados.php
+  - Exibe resultado do teste vocacional
+  - Recebe $_SESSION['resultados'] gerado por formulario.php
+*/
+
 if (!isset($_SESSION['resultados'])) {
     header('Location: formulario.php');
     exit;
@@ -11,176 +17,181 @@ $cursoRecomendado = $resultado['curso_recomendado'];
 $pontuacao = $resultado['pontuacao'];
 $totalPerguntas = $resultado['total_perguntas'];
 $todasPontuacoes = $resultado['todas_pontuacoes'];
-
 $porcentagemCompatibilidade = round(($pontuacao / $totalPerguntas) * 100);
 
+// Descrições atualizadas para os 6 perfis
 $descricoesCursos = [
-    'Desenvolvimento de Sistemas / Técnico em Informática' => [
-        'descricao' => 'Você tem perfil para trabalhar com tecnologia, programação e sistemas computacionais.',
-        'areas' => ['Programação', 'Desenvolvimento Web', 'Aplicativos Mobile', 'Banco de Dados', 'Redes'],
-        'mercado' => 'Área em alta demanda com excelentes oportunidades de emprego e salários atrativos.',
-        'cor' => '#2196F3'
+    'Tecnologia (Desenvolvimento de Sistemas / Informática)' => [
+        'descricao' => 'Perfil técnico focado em lógica, programação e soluções digitais.',
+        'areas' => ['Desenvolvimento Web', 'Aplicativos Mobile', 'Banco de Dados', 'Redes e Suporte', 'Automação'],
+        'mercado' => 'Alta demanda por profissionais, oportunidades em empresas de tecnologia, startups e setor público.',
+        'cor' => '#1E88E5',
+        'motivo' => 'Suas respostas indicam facilidade com raciocínio lógico, interesse por tecnologia e preferência por tarefas analíticas — características centrais para atuar em TI.'
     ],
-    'Mecânica / Edificações' => [
-        'descricao' => 'Você tem aptidão para trabalhar com máquinas, estruturas e projetos de construção.',
-        'areas' => ['Manutenção Industrial', 'Projetos Estruturais', 'Construção Civil', 'Máquinas', 'Automação'],
-        'mercado' => 'Setor fundamental da economia com oportunidades em indústrias e construção civil.',
-        'cor' => '#FF9800'
+    'Gestão (Administração / Logística)' => [
+        'descricao' => 'Perfil voltado para gestão, processos, organização e comunicação.',
+        'areas' => ['Administração', 'Logística', 'Marketing', 'Recursos Humanos', 'Comercial'],
+        'mercado' => 'Ampla oferta de vagas em empresas de todos os setores; ótima base para empreender também.',
+        'cor' => '#283593',
+        'motivo' => 'Você demonstra organização, capacidade de planejamento e habilidade para trabalhar com pessoas e processos — aptidões essenciais nessas áreas.'
     ],
-    'Nutrição' => [
-        'descricao' => 'Você demonstra interesse em saúde, alimentação e bem-estar das pessoas.',
-        'areas' => ['Alimentação Saudável', 'Dietas Terapêuticas', 'Nutrição Esportiva', 'Saúde Pública'],
-        'mercado' => 'Área em crescimento com foco na prevenção e promoção da saúde.',
-        'cor' => '#4CAF50'
+    'Saúde (Enfermagem / Nutrição)' => [
+        'descricao' => 'Perfil vocacionado ao cuidado, empatia, responsabilidade e práticas de saúde.',
+        'areas' => ['Enfermagem', 'Nutrição', 'Atenção Básica', 'Urgência e Emergência', 'Promoção de Saúde'],
+        'mercado' => 'Grande demanda contínua; profissões com estabilidade e impacto social direto.',
+        'cor' => '#D81B60',
+        'motivo' => 'Suas respostas mostram sensibilidade, paciência e desejo de ajudar — qualidades fundamentais para quem trabalha com saúde.'
     ],
-    'Enfermagem' => [
-        'descricao' => 'Você tem vocação para cuidar de pessoas e trabalhar na área da saúde.',
-        'areas' => ['Cuidados Hospitalares', 'Saúde Pública', 'Emergências', 'Pediatria', 'Geriatria'],
-        'mercado' => 'Profissão essencial com alta demanda e estabilidade no mercado.',
-        'cor' => '#E91E63'
+    'Infraestrutura (Edificações / Mecânica)' => [
+        'descricao' => 'Perfil prático com habilidade manual, inteligência espacial e foco em execução técnica.',
+        'areas' => ['Construção Civil', 'Manutenção Industrial', 'Projetos', 'Eletrotécnica', 'Automação'],
+        'mercado' => 'Setores essenciais (construção e indústria) com demanda constante por técnicos qualificados.',
+        'cor' => '#EF6C00',
+        'motivo' => 'Você tem interesse por soluções concretas e trabalho manual, além de boa percepção técnica — o que combina com cursos práticos e de campo.'
     ],
-    'Técnico em Informática / Logística' => [
-        'descricao' => 'Você combina habilidades técnicas com organização e planejamento.',
-        'areas' => ['Suporte Técnico', 'Gestão de Estoques', 'Transporte', 'Armazenagem', 'TI'],
-        'mercado' => 'Áreas complementares com boa demanda no mercado atual.',
-        'cor' => '#9C27B0'
+    'Ciências da Natureza e suas Tecnologias' => [
+        'descricao' => 'Perfil investigativo com foco em ciência, natureza e produção sustentável.',
+        'areas' => ['Análises Laboratoriais', 'Gestão Ambiental', 'Química Industrial', 'Agronegócio', 'Segurança do Trabalho'],
+        'mercado' => 'Crescimento em indústrias, laboratórios, órgãos ambientais e empresas agropecuárias.',
+        'cor' => '#43A047',
+        'motivo' => 'Você valoriza a ciência aplicada, observação detalhada e soluções voltadas à natureza e à produção — características típicas dessas áreas.'
     ],
-    'Logística / Administração' => [
-        'descricao' => 'Você tem perfil organizacional e gosta de planejar e gerenciar processos.',
-        'areas' => ['Gestão de Estoques', 'Administração', 'Recursos Humanos', 'Finanças', 'Planejamento'],
-        'mercado' => 'Áreas fundamentais em qualquer empresa, com boa estabilidade profissional.',
-        'cor' => '#795548'
-    ],
-    'Edificações' => [
-        'descricao' => 'Você tem interesse em construção, projetos arquitetônicos e engenharia civil.',
-        'areas' => ['Projetos Arquitetônicos', 'Construção Civil', 'Orçamentos', 'Fiscalização de Obras'],
-        'mercado' => 'Setor importante da economia com oportunidades em construtoras e escritórios.',
-        'cor' => '#607D8B'
-    ],
-    'Ciências da Natureza' => [
-        'descricao' => 'Você demonstra curiosidade científica e interesse em pesquisa e experimentação.',
-        'areas' => ['Pesquisa Científica', 'Laboratórios', 'Meio Ambiente', 'Análises', 'Biotecnologia'],
-        'mercado' => 'Área em crescimento com foco em sustentabilidade e inovação.',
-        'cor' => '#009688'
-    ],
-    'Marketing / Gastronomia' => [
-        'descricao' => 'Você tem perfil criativo e gosta de trabalhar com pessoas e experiências.',
-        'areas' => ['Marketing Digital', 'Publicidade', 'Gastronomia', 'Eventos', 'Comunicação'],
-        'mercado' => 'Áreas criativas com boa demanda, especialmente no setor de serviços.',
-        'cor' => '#FF5722'
-    ],
-    'Administração' => [
-        'descricao' => 'Você tem perfil gerencial e interesse em liderar equipes e processos.',
-        'areas' => ['Gestão Empresarial', 'Recursos Humanos', 'Finanças', 'Planejamento Estratégico'],
-        'mercado' => 'Área fundamental com oportunidades em diversos setores da economia.',
-        'cor' => '#3F51B5'
+    'Marketing' => [
+        'descricao' => 'Perfil criativo, expressivo e focado em linguagem visual e experiências.',
+        'areas' => ['Produção de Eventos', 'Design Gráfico', 'Audiovisual', 'Fotografia', 'Marketing Digital'],
+        'mercado' => 'Oportunidades em agências, produtoras, mídias e empresas que valorizam identidade visual e conteúdo.',
+        'cor' => '#8E24AA',
+        'motivo' => 'Sua criatividade, sensibilidade estética e desejo de se expressar indicam que você se desenvolverá bem em áreas artísticas e de comunicação.'
     ]
 ];
 
 $infoCurso = $descricoesCursos[$cursoRecomendado] ?? [
-    'descricao' => 'Curso técnico com boas oportunidades no mercado.',
-    'areas' => ['Área Técnica'],
+    'descricao' => 'Perfil técnico com boas oportunidades no mercado.',
+    'areas' => ['Formação Técnica'],
     'mercado' => 'Boa demanda no mercado de trabalho.',
-    'cor' => '#666666'
+    'cor' => '#666666',
+    'motivo' => 'Suas respostas indicaram um perfil técnico ou prático compatível com cursos técnicos.'
 ];
 
-$outrosCursos = array_slice($todasPontuacoes, 1, 3, true);
+arsort($todasPontuacoes);
+$outrosCursos = $todasPontuacoes;
+unset($outrosCursos[$cursoRecomendado]);
+$outrosCursos = array_slice($outrosCursos, 0, 3, true);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Resultado do seu teste vocacional">
-    <title>Seu Resultado - Teste Vocacional</title>
-    <link rel="stylesheet" href="../../assets/css/result.css">
+    <meta charset="utf-8">
+    <title>Resultado - Teste Vocacional InformaETEC</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/result.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="dashboard">
-        <div class="dashboard-content">
-            <div class="progress-section">
-                <div class="progress-container">
-                    <div class="progress-circle">
-                        <canvas id="circleChart"></canvas>
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                            <div style="font-size: 36px; font-weight: bold; color: <?= $infoCurso['cor'] ?>;"><?= $porcentagemCompatibilidade ?>%</div>
-                            <div style="font-size: 12px; color: #666;">compatibilidade</div>
-                        </div>
+    <div class="wrap">
+        <div class="card">
+            <div class="top">
+                <div id="chartContainer" style="width:160px;height:160px;position:relative;">
+                    <canvas id="doughnut"></canvas>
+                    <div style="position:absolute;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column">
+                        <div style="font-weight:800;font-size:20px;color:<?= htmlspecialchars($infoCurso['cor']) ?>"><?= $porcentagemCompatibilidade ?>%</div>
+                        <div style="font-size:12px;color:var(--muted)">Compatibilidade</div>
                     </div>
                 </div>
-                
-                <div class="progress-labels">
-                    <div class="status-label" style="color: <?= $infoCurso['cor'] ?>;">
-                        🎯 <?= htmlspecialchars($cursoRecomendado) ?>
+
+                <div class="title">
+                    <h1>Resultado do Teste Vocacional</h1>
+                    <p class="lead">Curso recomendado: <strong><?= htmlspecialchars($cursoRecomendado) ?></strong></p>
+                    <p style="margin:6px 0;color:var(--muted)"><?= htmlspecialchars($infoCurso['descricao']) ?></p>
+                    <div style="margin-top:10px">
+                        <span class="badge" style="background:<?= htmlspecialchars($infoCurso['cor']) ?>"><?= $porcentagemCompatibilidade ?>%</span>
+                        <span style="margin-left:10px;color:var(--muted)">Pontuação: <?= $pontuacao ?> / <?= $totalPerguntas ?></span>
                     </div>
                 </div>
             </div>
-            
-            <div class="recomendacoes-container">
-                <div class="recomendacoes-header">SEU PERFIL VOCACIONAL</div>
-                
-                <div class="curso-info">
-                    <h3>📚 Curso Recomendado</h3>
-                    <p><strong><?= htmlspecialchars($cursoRecomendado) ?></strong></p>
-                    <p><?= htmlspecialchars($infoCurso['descricao']) ?></p>
-                    
-                    <h4>🎯 Áreas de Atuação:</h4>
-                    <ul>
+
+            <div class="curso-info">
+                <div class="card-section">
+                    <h3>Por que você combina com esse curso?</h3>
+                    <p style="margin:8px 0;color:var(--muted)"><?= htmlspecialchars($infoCurso['motivo']) ?></p>
+
+                    <h4 style="margin-top:12px">Áreas de atuação</h4>
+                    <ul class="areas-lista">
                         <?php foreach ($infoCurso['areas'] as $area): ?>
-                            <li><?= htmlspecialchars($area) ?></li>
+                            <li>• <?= htmlspecialchars($area) ?></li>
                         <?php endforeach; ?>
                     </ul>
-                    
-                    <h4>💼 Mercado de Trabalho:</h4>
-                    <p><?= htmlspecialchars($infoCurso['mercado']) ?></p>
-                    
-                    <?php if (!empty($outrosCursos)): ?>
-                        <h4>📊 Outras Compatibilidades:</h4>
-                        <ul>
-                            <?php foreach ($outrosCursos as $curso => $pontos): ?>
-                                <li><?= htmlspecialchars($curso) ?> - <?= round(($pontos / $totalPerguntas) * 100) ?>%</li>
+
+                    <h4 style="margin-top:12px">Mercado de trabalho</h4>
+                    <p style="margin:6px 0;color:var(--muted)"><?= htmlspecialchars($infoCurso['mercado']) ?></p>
+
+                    <h4 style="margin-top:12px">Dicas para você</h4>
+                    <ul style="margin:6px 0 0 18px;color:var(--muted)">
+                        <li>• Procure fazer cursos extras na área (cursos curtos, oficinas, bootcamps).</li>
+                        <li>• Participe de projetos práticos e feiras da escola.</li>
+                        <li>• Busque estágios ou programas de iniciação profissional.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="card-section">
+                        <h4>Outras compatibilidades</h4>
+                        <?php if (!empty($outrosCursos)): ?>
+                            <ul class="outras-compatibilidades">
+                                <?php foreach ($outrosCursos as $curso => $pontos): ?>
+                                    <li>
+                                        <span><?= htmlspecialchars($curso) ?></span>
+                                        <span><?= round(($pontos / $totalPerguntas) * 100) ?>%</span>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php else: ?>
+                            <p style="color:var(--muted)">Nenhuma outra compatibilidade encontrada.</p>
+                        <?php endif; ?>
+
+                        <hr style="margin:12px 0;border:none;border-top:1px solid #f0f0f0">
+
+                        <h4>Relatório rápido</h4>
+                        <p style="color:var(--muted);margin:6px 0">
+                            Pontuação detalhada (por perfil):
+                        </p>
+                        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
+                            <?php foreach ($todasPontuacoes as $curso => $pontos): ?>
+                                <li style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #f0f0f0">
+                                    <span><?= htmlspecialchars($curso) ?></span>
+                                    <span><?= $pontos ?> pts</span>
+                                </li>
                             <?php endforeach; ?>
                         </ul>
-                    <?php endif; ?>
-                </div>
-                
-                <div class="acoes">
-                    <a href="formulario.php" class="btn-refazer">🔄 Refazer Teste</a>
-                    <a href="reset.php" class="btn-novo">🆕 Novo Teste</a>
+
+                        <div class="acoes">
+                            <a class="btn btn-refazer" href="formulario.php">🔄 Refazer Teste</a>
+                            <a class="btn btn-novo" href="reset.php">🆕 Iniciar novo</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        const ctxCircle = document.getElementById('circleChart').getContext('2d');
-        
-        new Chart(ctxCircle, {
+        const ctx = document.getElementById('doughnut').getContext('2d');
+        const percent = <?= $porcentagemCompatibilidade ?>;
+        new Chart(ctx, {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [<?= $porcentagemCompatibilidade ?>, 100 - <?= $porcentagemCompatibilidade ?>],
-                    backgroundColor: [
-                        '<?= $infoCurso['cor'] ?>',
-                        '#e0e0e0'
-                    ],
+                    data: [percent, 100 - percent],
+                    backgroundColor: ['<?= $infoCurso['cor'] ?>', '#e6eef9'],
                     borderWidth: 0,
                     cutout: '70%'
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: false
-                    }
-                }
+                plugins: { legend: { display: false }, tooltip: { enabled: false }},
+                maintainAspectRatio: false
             }
         });
     </script>

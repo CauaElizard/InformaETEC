@@ -269,155 +269,392 @@ $professores = $stmtProfessores->fetchAll(PDO::FETCH_ASSOC);
                         <div class="row mb-5">
                             
             </section>
-            <!-- Cursos -->
-            <section id="cursos-content" class="content-section">
-                <div class="section-padding bg-light-custom">
-                    <div class="container">
-                        <h2 class="section-title">Nossos Cursos</h2>
-                        <p class="text-center mb-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio
-                            laboriosam voluptates deleniti explicabo temporibus.
-                        </p>
-                        <div class="row" id="cards-cursos">
-                            <?php foreach ($cursos as $curso): ?>
-                            <div class="col-md-4 mb-4">
-                                <div class="course-card card-item" data-id="<?php echo $curso['id']; ?>" data-type="curso">
-                                    <div class="course-img">
-                                        <img src="<?php echo $curso['imagem']; ?>" alt="<?php echo htmlspecialchars($curso['nome']); ?>">
-                                    </div>
-                                    <div class="course-content">
-                                        <h3 class="course-title"><?php echo htmlspecialchars($curso['nome']); ?></h3>
-                                        <p class="course-desc">
-                                            <?php echo htmlspecialchars($curso['descricao']); ?>
-                                        </p>
-                                        <div class="course-info">
-                                            <span class="course-duration"><i class="fas fa-clock"></i> <?php echo htmlspecialchars($curso['duracao']); ?></span>
-                                            <span class="course-modality"><i class="fas fa-laptop"></i> <?php echo htmlspecialchars($curso['modalidade']); ?></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php endforeach; ?>
+<!-- ============================================
+     CURSOS (AGORA DENTRO DO #dynamic-content)
+=============================================== -->
+<section id="cursos-content" class="content-section">
+    <div class="section-padding bg-light-custom">
+        <div class="container">
+
+            <h2 class="section-title">Nossos Cursos</h2>
+            <p class="text-center mb-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Quidem odio laboriosam voluptates deleniti explicabo temporibus.
+            </p>
+
+            <div class="row" id="cards-cursos">
+
+                <?php foreach ($cursos as $curso): ?>
+                <div class="col-md-4 mb-4">
+
+                    <!-- Card do curso -->
+                    <div class="course-card card-item"
+                         data-id="<?= $curso['id']; ?>"
+                         data-type="curso">
+
+                        <div class="course-img">
+                            <img src="<?= $curso['imagem']; ?>"
+                                 alt="<?= htmlspecialchars($curso['nome']); ?>">
                         </div>
-                    </div>
-                </div>
-            </section>
-            <div id="sidebarOverlay"
-                style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1040; transition:opacity 0.2s ease;">
-            </div>
-            <!-- Sidebar reaproveitada (claramente essa parte foi feita pelo chatgpt) -->
-            <div id="course-sidebar" class="content-section active bg-light-custom"
-                style="display:none; position:fixed; top:0; right:0; width:420px; max-width:95%; height:100vh; box-shadow:-4px 0 20px rgba(0,0,0,0.15); z-index:1050;">
-                <div style="height:100%; overflow-y:auto;">
-                    <div class="course-card p-4 position-relative" style="min-height:100%;">
-                        <button id="closeSidebar" style="
-          position:absolute;
-          top:12px;
-          right:16px;
-          background:rgba(0,0,0,0.05);
-          border:none;
-          font-size:1.8rem;
-          color:#333;
-          cursor:pointer;
-          border-radius:50%;
-          width:36px;
-          height:36px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          transition:all 0.2s ease;
-        " title="Fechar painel">&times;</button>
-                        <div class="course-img mb-3">
-                            <img src="assets/img/curso-ds.jpg" alt="Imagem do curso" class="img-fluid rounded">
-                        </div>
+
                         <div class="course-content">
-                            <h3 class="course-title" id="sidebarTitle">Desenvolvimento de Sistemas</h3>
-                            <p class="course-desc" id="sidebarDesc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odio
-                                laboriosam voluptates deleniti explicabo temporibus. Vitae laudantium
-                                sapiente mollitia veritatis, odit obcaecati sequi! Maxime, adipisci
-                                animi! Quaerat nobis mollitia excepturi.
+
+                            <h3 class="course-title">
+                                <?= htmlspecialchars($curso['nome']); ?>
+                            </h3>
+
+                            <p class="course-desc">
+                                <?= htmlspecialchars($curso['descricao']); ?>
                             </p>
-                            <div class="course-info mt-3">
-                                <span class="course-duration"><i class="fas fa-clock"></i> 3 anos</span>
-                                <span class="course-modality"><i class="fas fa-laptop"></i> Presencial</span>
+
+                            <div class="course-info">
+                                <span class="course-duration">
+                                    <i class="fas fa-clock"></i>
+                                    <?= htmlspecialchars($curso['duracao']); ?>
+                                </span>
+
+                                <span class="course-modality">
+                                    <i class="fas fa-laptop"></i>
+                                    <?= htmlspecialchars($curso['modalidade']); ?>
+                                </span>
                             </div>
-                            <hr class="my-4">
-                            <div class="mb-4">
-                                <h4 class="course-title" style="font-size:1.1rem;">Principais competências desenvolvidas
-                                </h4>
-                                <ul style="list-style:none; padding-left:0; margin-top:1rem; color:var(--gray);">
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> aaaaaaaa</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> aaaaa</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> aaaaaa</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> aaaaaaaaa</li>
-                                </ul>
-                            </div>
-                            <div class="mb-4">
-                                <h4 class="course-title" style="font-size:1.1rem;">Sobre o curso</h4>
-                                <p class="course-desc">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-                                    iusto possimus unde libero vel amet nemo veritatis error pariatur.
-                                    Quasi eius praesentium, iure at consequatur reprehenderit quod
-                                    deleniti consequuntur nesciunt?
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <h4 class="course-title" style="font-size:1.1rem;">Coordenação</h4>
-                                <div class="d-flex align-items-center mt-2">
-                                    <div class="teacher-avatar me-3">
-                                        <i class="fas fa-user-tie"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-1" style="font-size:1rem; color:var(--primary);">Bebel Gaiozo</h5>
-                                        <small class="text-muted">Coordenador do curso</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-4 mb-3">
-                                <p class="text-muted" style="font-size:0.9rem;">
-                                    * As informações apresentadas nesta página têm caráter informativo e
-                                    podem ser atualizadas conforme o plano de curso vigente. Para detalhes
-                                    sobre inscrições, consulte a área do Vestibulinho.
-                                </p>
-                            </div>
+
                         </div>
                     </div>
+
                 </div>
+                <?php endforeach; ?>
+
             </div>
-            <!-- Professores -->
-            <section id="professores-content" class="content-section">
-                <div class="section-padding bg-light-custom">
-                    <div class="container">
-                        <h2 class="section-title">Nossos Professores</h2>
-                        <p class="text-center mb-5">
-                            Conheça o corpo docente responsável por formar, orientar e inspirar nossos alunos
-                            ao longo da jornada acadêmica.
-                        </p>
-                        <div class="row" id="cards-professores">
-                            <?php foreach ($professores as $professor): ?>
-                            <div class="col-md-4 mb-4">
-                                <div class="course-card card-item" data-id="<?php echo $professor['id']; ?>" data-type="professor">
-                                    <div class="course-img">
-                                        <img src="<?php echo $professor['imagem']; ?>" alt="<?php echo htmlspecialchars($professor['nome']); ?>">
-                                    </div>
-                                    <div class="course-content">
-                                        <h3 class="course-title"><?php echo htmlspecialchars($professor['nome']); ?></h3>
-                                        <p class="course-desc">
-                                            <?php echo htmlspecialchars($professor['biografia']); ?>
-                                        </p>
-                                        <div class="course-info">
-                                            <span class="course-duration"><i class="fas fa-user-tie"></i> <?php echo htmlspecialchars($professor['materia']); ?></span>
-                                            <span class="course-modality"><i class="fas fa-envelope"></i> <?php echo htmlspecialchars($professor['email']); ?></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================
+     OVERLAY DA SIDEBAR DE CURSOS
+=============================================== -->
+<div id="sidebarOverlay"
+     style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.45);
+        z-index:1040;
+     ">
+</div>
+
+
+<!-- ============================================
+     SIDEBAR DE CURSOS
+=============================================== -->
+<div id="course-sidebar"
+     class="content-section active bg-light-custom"
+     style="
+        display:none;
+        position:fixed;
+        top:0;
+        right:0;
+        width:420px;
+        max-width:95%;
+        height:100vh;
+        background:white;
+        box-shadow:-4px 0 20px rgba(0,0,0,0.15);
+        z-index:1050;
+     ">
+
+    <div style="height:100%; overflow-y:auto;">
+        <div class="course-card p-4 position-relative" style="min-height:100%;">
+
+            <!-- Botão fechar -->
+            <button id="closeSidebar"
+                style="
+                    position:absolute;
+                    top:12px;
+                    right:16px;
+                    background:rgba(0,0,0,0.05);
+                    border:none;
+                    font-size:1.8rem;
+                    color:#333;
+                    cursor:pointer;
+                    border-radius:50%;
+                    width:36px;
+                    height:36px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    transition:all .2s ease;
+                ">
+                &times;
+            </button>
+
+            <!-- Imagem do curso -->
+            <div class="course-img mb-3">
+                <img src="assets/img/curso-ds.jpg"
+                     id="sidebarImg"
+                     alt="Imagem do curso"
+                     class="img-fluid rounded">
+            </div>
+
+            <!-- Conteúdo -->
+            <div class="course-content">
+
+                <h3 id="sidebarTitle" class="course-title">
+                    Título do Curso
+                </h3>
+
+                <p id="sidebarDesc" class="course-desc">
+                    Descrição do curso...
+                </p>
+
+                <div class="course-info mt-3">
+                    <span class="course-duration">
+                        <i class="fas fa-clock"></i>
+                        <span id="sidebarDuration">3 anos</span>
+                    </span>
+
+                    <span class="course-modality">
+                        <i class="fas fa-laptop"></i>
+                        <span id="sidebarModality">Presencial</span>
+                    </span>
+                </div>
+
+                <hr class="my-4">
+
+                <!-- Competências -->
+                <div class="mb-4">
+                    <h4 class="course-title" style="font-size:1.1rem;">
+                        Competências Desenvolvidas
+                    </h4>
+
+                    <ul style="list-style:none; padding-left:0; margin-top:1rem; color:var(--gray);">
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Competência 1</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Competência 2</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Competência 3</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Competência 4</li>
+                    </ul>
+                </div>
+
+                <!-- Sobre o curso -->
+                <div class="mb-4">
+                    <h4 class="course-title" style="font-size:1.1rem;">Sobre o Curso</h4>
+                    <p class="course-desc">
+                        Texto sobre o curso...
+                    </p>
+                </div>
+
+                <!-- Coordenação -->
+                <div class="mb-4">
+                    <h4 class="course-title" style="font-size:1.1rem;">Coordenação</h4>
+
+                    <div class="d-flex align-items-center mt-2">
+                        <div class="teacher-avatar me-3">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+
+                        <div>
+                            <h5 class="mb-1"
+                                style="font-size:1rem; color:var(--primary);">
+                                Nome do Coordenador
+                            </h5>
+                            <small class="text-muted">Coordenador do curso</small>
                         </div>
                     </div>
                 </div>
-            </section>
+
+                <div class="mt-4 mb-3">
+                    <p class="text-muted" style="font-size:0.9rem;">
+                        * Informações sujeitas a atualização conforme plano de curso vigente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- PROFESSORES -->
+<section id="professores-content" class="content-section">
+    <div class="section-padding bg-light-custom">
+        <div class="container">
+            <h2 class="section-title">Nossos Professores</h2>
+            <p class="text-center mb-5">
+                Conheça o corpo docente responsável por formar, orientar e inspirar nossos alunos
+                ao longo da jornada acadêmica.
+            </p>
+
+            <div class="row" id="cards-professores">
+
+                <?php foreach ($professores as $professor): ?>
+                <div class="col-md-4 mb-4">
+
+                    <!-- CARD DO PROFESSOR -->
+                    <div class="course-card professor-card"
+                         data-id="<?php echo $professor['id']; ?>">
+
+                        <div class="course-img">
+                            <img src="<?php echo $professor['imagem']; ?>"
+                                 alt="<?php echo htmlspecialchars($professor['nome']); ?>">
+                        </div>
+
+                        <div class="course-content">
+                            <h3 class="course-title">
+                                <?php echo htmlspecialchars($professor['nome']); ?>
+                            </h3>
+
+                            <p class="course-desc">
+                                <?php echo htmlspecialchars($professor['biografia']); ?>
+                            </p>
+
+                            <div class="course-info">
+
+                                <span class="course-duration">
+                                    <i class="fas fa-user-tie"></i>
+                                    <?php echo htmlspecialchars($professor['materia']); ?>
+                                </span>
+
+                                <span class="course-modality">
+                                    <i class="fas fa-envelope"></i>
+                                    <?php echo htmlspecialchars($professor['email']); ?>
+                                </span>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <?php endforeach; ?>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SIDEBAR EXCLUSIVA PARA PROFESSORES -->
+<div id="professor-sidebar"
+     class="p-4"
+     style="
+        display:none;
+        position:fixed;
+        top:0;
+        right:0;
+        width:400px;
+        height:100vh;
+        background:#ffffff;
+        box-shadow:-4px 0 14px rgba(0,0,0,0.15);
+        z-index:1050; /* SOBREPOE A NAVBAR */
+        overflow-y:auto;
+        transition:all .3s ease;
+     ">
+
+    <!-- Botão fechar -->
+    <button id="closeProfessorSidebar"
+            class="btn btn-outline-secondary mb-3"
+            style="position:absolute; top:15px; right:15px;">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Foto -->
+    <div class="text-center mt-4">
+        <img id="profSidebarImg"
+             src=""
+             class="rounded-circle shadow-sm"
+             style="width:150px; height:150px; object-fit:cover;">
+    </div>
+
+    <!-- Nome -->
+    <h3 id="profSidebarName" class="text-center mt-3 fw-bold">Nome do Professor</h3>
+
+    <!-- Área -->
+    <p id="profSidebarArea" class="text-center text-muted">
+        Área / Disciplina
+    </p>
+
+    <hr class="my-4">
+
+    <!-- Bio -->
+    <h5 class="fw-semibold">Sobre o professor</h5>
+    <p id="profSidebarDesc" class="text-muted">
+        Descrição do professor
+    </p>
+
+    <hr class="my-4">
+
+    <!-- Contato -->
+    <h5 class="fw-semibold">Contato</h5>
+    <p class="mb-1">
+        <i class="fas fa-envelope text-primary"></i>
+        <span id="profSidebarEmail">email@instituicao.com</span>
+    </p>
+
+</div>
+
+
+<!-- OVERLAY -->
+<div id="professorSidebarOverlay"
+     style="
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,.45);
+        z-index:1040;
+     ">
+</div>
+
+
+<!-- JS DA SIDEBAR DE PROFESSORES (NAVBAR NÃO SOME) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sidebar = document.getElementById("professor-sidebar");
+    const overlay = document.getElementById("professorSidebarOverlay");
+
+    // ABRIR SIDEBAR
+    document.querySelectorAll(".professor-card").forEach(card => {
+        card.addEventListener("click", () => {
+
+            const nome  = card.querySelector(".course-title")?.textContent || "";
+            const desc  = card.querySelector(".course-desc")?.textContent || "";
+            const img   = card.querySelector("img")?.src || "";
+            const area  = card.querySelector(".course-duration")?.textContent.trim() || "";
+            const email = card.querySelector(".course-modality")?.textContent.trim() || "";
+
+            // Preencher sidebar
+            document.getElementById("profSidebarName").textContent = nome;
+            document.getElementById("profSidebarDesc").textContent = desc;
+            document.getElementById("profSidebarImg").src = img;
+            document.getElementById("profSidebarArea").textContent = area;
+            document.getElementById("profSidebarEmail").textContent = email;
+
+            // Mostrar sidebar e overlay
+            sidebar.style.display = "block";
+            overlay.style.display = "block";
+
+            document.body.classList.add("no-scroll");
+        });
+    });
+
+    // FECHAR SIDEBAR
+    const closeSidebar = () => {
+        sidebar.style.display = "none";
+        overlay.style.display = "none";
+        document.body.classList.remove("no-scroll");
+    };
+
+    document.getElementById("closeProfessorSidebar").addEventListener("click", closeSidebar);
+    overlay.addEventListener("click", closeSidebar);
+
+});
+</script>
+
             <!-- Infraestrutura -->
             <section id="infraestrutura-content" class="content-section">
                 <div class="container">
